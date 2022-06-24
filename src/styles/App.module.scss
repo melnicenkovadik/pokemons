@@ -1,0 +1,114 @@
+$base-color: #ee5252;
+$base-color-hover: #da4848;
+$light-color: rgb(231, 231, 231);
+$light-color-hover: rgb(206, 206, 206);
+$width: 900px;
+$border-radius: 10px;
+$text-color: rgb(20, 20, 20);
+$transition: 0.2s all ease-in-out;
+
+.app {
+    width: 100%;
+    min-height: 93vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $light-color;
+    color: $text-color;
+
+    .results {
+        padding: 1em 0;
+        border-bottom: 3px solid $base-color;
+        margin-bottom: 1em;
+    }
+}
+.appContainer {
+    width: $width;
+    min-height: 100vh;
+    background: rgb(243, 243, 243);
+    padding: 1em 8em;
+    padding-top: 90px;
+
+    .pokemonList {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .pokemonCard {
+        background: #dadada;
+        border-radius: $border-radius;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5em;
+        border: 1px solid #bdbdbd;
+        border-bottom: 3px solid $base-color;
+        min-height: 155px;
+        transition: $transition;
+
+        &:hover {
+            cursor: pointer;
+            background: $light-color-hover;
+            color: $base-color;
+        }
+
+        h1 {
+            color: rgb(20, 20, 20);
+            font-weight: 400;
+            font-size: 0.9em;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        img {
+            height: 90px;
+            width: auto;
+            margin: 10px 0 0 0;
+        }
+    }
+
+    .loadMoreBtn {
+        margin-top: 20px;
+        width: 100%;
+        background: $base-color;
+        color: rgb(255, 255, 255);
+        font-size: 1.2em;
+        padding: 0.5em;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+        border-bottom: 3px solid rgb(206, 206, 206);
+        transition: $transition;
+
+        &:hover {
+            background: $base-color-hover;
+        }
+
+        &:disabled {
+            background: rgb(134, 134, 134);
+            color: rgb(80, 80, 80);
+        }
+    }
+}
+
+@media only screen and (max-width: $width) {
+    .appContainer {
+        width: 100%;
+        background: rgb(243, 243, 243);
+        padding: 10px 10px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .appContainer {
+        padding-top: 160px;
+
+        .pokemonList {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

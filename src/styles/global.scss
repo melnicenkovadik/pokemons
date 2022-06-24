@@ -1,0 +1,31 @@
+$base-color: #ee5252;
+$light-color: rgb(255, 224, 224);
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: $base-color;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+.app {
+    min-height: 100vh;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    background: $light-color;
+}
